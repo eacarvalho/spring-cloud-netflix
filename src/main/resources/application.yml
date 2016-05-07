@@ -1,0 +1,27 @@
+messages:
+  basename: messages
+  fallback-to-system-locale: true
+  default:
+    country: BR
+    language: PT
+
+server:
+  compression:
+    enabled: true
+    mime-types: application/json
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://127.0.0.1:8761}/eureka/
+  server:
+      waitTimeInMsWhenSyncEmpty: 0
+
+spring:
+  service:
+    name: spring-cloud-netflix
+  http:
+    converters:
+      preferred-json-mapper: jackson
