@@ -14,8 +14,11 @@ server:
 eureka:
   instance:
     hostname: localhost
-    instanceId: spring-cloud-netflix
+    instanceId: ${spring.application.name}
     leaseRenewalIntervalInSeconds: 15
+    preferIpAddress: true
+    metadataMap:
+      instanceId: ${spring.application.name}:${server.port}
   client:
     healthcheck:
       enabled: true
