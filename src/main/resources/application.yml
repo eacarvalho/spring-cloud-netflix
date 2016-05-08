@@ -6,12 +6,19 @@ messages:
     language: PT
 
 server:
+  port: 7070
   compression:
     enabled: true
     mime-types: application/json
 
 eureka:
+  instance:
+    hostname: localhost
+    instanceId: spring-cloud-netflix
+    leaseRenewalIntervalInSeconds: 15
   client:
+    healthcheck:
+      enabled: true
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
