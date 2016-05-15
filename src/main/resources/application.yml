@@ -34,6 +34,11 @@ ribbon:
   eureka:
     enabled: true
 
+spring-cloud-netflix:
+  ribbon:
+    NIWSServerListClassName: com.netflix.niws.loadbalancer.DiscoveryEnabledNIWSServerList
+    ServerListRefreshInterval: 2000
+
 info:
   application:
     name: ${spring.application.name}
