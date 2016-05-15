@@ -9,11 +9,11 @@ Java 8, spring-boot 1.2.8, spring-cloud-netflix, Ribbon e Feign.
 * Próximo passo configurar Hystrix
 
 # Como iniciar os Microservices
-mvn spring-boot:run -Dserver.port=7070
-mvn spring-boot:run -Dserver.port=6060
+- mvn spring-boot:run -Dserver.port=7070
+- mvn spring-boot:run -Dserver.port=6060
 
 # Visualizar os serviços no Eureka (service-name)
-http://localhost:8761/
+- http://localhost:8761/
 
 # Como acessar os Serviços (spring-cloud-netflix)
 - Acessar diretamente os serviços: http://localhost:7070/hello ou http://localhost:6060/hello
@@ -81,4 +81,4 @@ spring:
   cloud:
     config:
       enabled: false
-``
+```
