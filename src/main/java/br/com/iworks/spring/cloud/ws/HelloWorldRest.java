@@ -10,7 +10,7 @@ public class HelloWorldRest {
     @ResponseBody
     @ResponseStatus(HttpStatus.OK)
     @RequestMapping(method = RequestMethod.GET)
-    public String home() {
+    public String hello() {
         return "Hello World";
     }
 }

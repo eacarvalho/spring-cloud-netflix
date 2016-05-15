@@ -15,7 +15,8 @@ eureka:
   instance:
     hostname: localhost
     instanceId: ${spring.application.name}
-    leaseRenewalIntervalInSeconds: 15
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 10
     preferIpAddress: true
     metadataMap:
       instanceId: ${spring.application.name}:${server.port}
@@ -28,6 +29,22 @@ eureka:
       defaultZone: ${vcap.services.eureka-service.credentials.uri:http://127.0.0.1:8761}/eureka/
   server:
       waitTimeInMsWhenSyncEmpty: 0
+
+ribbon:
+  eureka:
+    enabled: true
+
+spring-cloud-netflix:
+  ribbon:
+    NIWSServerListClassName: com.netflix.niws.loadbalancer.DiscoveryEnabledNIWSServerList
+    ServerListRefreshInterval: 2000
+
+info:
+  application:
+    name: ${spring.application.name}
+  health-path: http://localhost:${server.port}/health
+  modulo: spring-cloud-netflix
+  projeto: Spring Cloud Netflix
 
 spring:
   service:
