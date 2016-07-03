@@ -14,7 +14,6 @@ public class HelloWorldRest {
     @RequestMapping(method = RequestMethod.GET)
     public String home() {
         log.info("Hello World");
-
         return "Hello World";
     }
 }

@@ -28,6 +28,22 @@ eureka:
   server:
       waitTimeInMsWhenSyncEmpty: 0
 
+ribbon:
+  eureka:
+    enabled: true
+
+spring-cloud-netflix:
+  ribbon:
+    NIWSServerListClassName: com.netflix.niws.loadbalancer.DiscoveryEnabledNIWSServerList
+    ServerListRefreshInterval: 2000
+
+info:
+  application:
+    name: ${spring.application.name}
+  health-path: http://localhost:${server.port}/health
+  modulo: spring-cloud-netflix
+  projeto: Spring Cloud Netflix
+
 spring:
   service:
     name: spring-cloud-netflix

@@ -1,4 +1,4 @@
-package br.com.iworks.spring.cloud.app;
+package br.com.iworks.spring.cloud.core.config;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration;
@@ -18,10 +18,10 @@ import java.util.Locale;
 
 @Configuration
 @EnableAutoConfiguration(exclude = {FreeMarkerAutoConfiguration.class})
-@ComponentScan(basePackages = {ModuleConfiguration.SCAN_PACKAGE})
-public class ModuleConfiguration extends WebMvcConfigurerAdapter {
+@ComponentScan(basePackages = {RestConfiguration.SCAN_PACKAGE})
+public class RestConfiguration extends WebMvcConfigurerAdapter {
 
-    static final String SCAN_PACKAGE = "br.com.iworks";
+    public static final String SCAN_PACKAGE = "br.com.iworks.spring.cloud.ws";
 
     @Bean
     public LocaleResolver localeResolver() {
