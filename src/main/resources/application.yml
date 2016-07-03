@@ -14,9 +14,8 @@ server:
 eureka:
   instance:
     hostname: localhost
-    instanceId: ${spring.application.name}
     leaseRenewalIntervalInSeconds: 15
-    preferIpAddress: true
+    preferIpAddress: false
     metadataMap:
       instanceId: ${spring.application.name}:${server.port}
   client:
